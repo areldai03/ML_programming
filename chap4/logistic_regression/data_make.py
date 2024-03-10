@@ -11,4 +11,7 @@ class Data:
         self.y = self.data[(self.data['MSSubClass']==30) |(self.data['MSSubClass']==60)][['MSSubClass']].values
         self.y[self.y==30] = 0
         self.y[self.y==60] = 1
+        mean_x = np.mean(self.x)
+        std_x = np.std(self.x)
+        self.x = (self.x-mean_x)/std_x
 
